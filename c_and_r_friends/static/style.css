@@ -1,0 +1,15 @@
+.table {
+  margin: auto;
+  width: 20% !important; 
+}
+
+h1 {
+  margin: auto;
+  width: 20% !important;
+  text-align: center;
+}
+
+.pet-form {
+  margin: auto;
+  width: 20% !important;
+}

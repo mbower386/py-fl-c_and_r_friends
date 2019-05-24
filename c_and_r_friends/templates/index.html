@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>All the Pets!</h1>
+  <div class="table-wrapper">
+    <table class="table table-hover table-responsive">
+      <thead class="thead-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+      </thead>
+      <tbody>
+        {% for pet in all_pets %}
+        <tr scope="row">
+          <td>{{ pet["pet_id"] }}</td>
+          <td>{{ pet["name"] }}</td>
+          <td>{{ pet["type"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h1>Add a Pet</h1>
+  <form action="/create_pet" method="POST">
+    <div class="form-group pet-form">
+      <p><input type="text" class="form-control" name="p_name" placeholder="Pet Name"></p>
+      <p><input type="text" class="form-control" name="p_type" placeholder="Pet Type"></p>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+</body>
+
+</html>
